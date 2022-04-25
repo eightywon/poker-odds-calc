@@ -53,7 +53,8 @@
   },
   "homepage": "https://github.com/eightyWon/poker-odds-calc#readme",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "src": "src"
   },
   "author": "Siavash Goudarzi <info@siavashg.com>"
 }
