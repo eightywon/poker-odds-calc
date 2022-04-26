@@ -54,8 +54,12 @@ class Table {
             throw new Error("Seat not available!");
         if (seat < 1 || seat > this.seats)
             throw new Error(`Seat ${seat} not available!`);
+        /*
+        spn
         if (!this.players[seat - 1].isEmpty())
-            throw new Error(`Seat ${seat} taken!`);
+          throw new Error(`Seat ${seat} taken!`);
+        spn
+        */
         this.players[seat - 1].setHand(hand);
         return this;
     }
