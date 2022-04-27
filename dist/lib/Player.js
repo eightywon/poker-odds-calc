@@ -31,6 +31,7 @@ class Player {
             console.log("card is  ", card);
             if (!card)
                 throw new Error(`Card "${hand}" not found!`);
+            this.hand[1] = card;
             return card.setOwner(this);
         }
         return this;
