@@ -16,12 +16,20 @@ class Player {
         */
         if (game.isOmaha() && hand.length !== 4)
             throw new Error("An Omaha hand must contain exactly 4 cards!");
-        this.hand = hand.map(c => {
-            const card = this.Table.getDeck().getCards().find(card => card.toString() === c);
+        if (!this.hand) {
+            this.hand = hand.map(c => {
+                const card = this.Table.getDeck().getCards().find(card => card.toString() === c);
+                if (!card)
+                    throw new Error(`Card "${c}" not found!`);
+                return card.setOwner(this);
+            });
+        }
+        else if (this.hand.length == 1) {
+            const card = this.Table.getDeck().getCards().find(card => card.toString() === hand[0]);
             if (!card)
-                throw new Error(`Card "${c}" not found!`);
+                throw new Error(`Card "${hand}" not found!`);
             return card.setOwner(this);
-        });
+        }
         return this;
     }
     getHand() {

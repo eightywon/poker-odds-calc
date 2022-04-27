@@ -6,7 +6,7 @@ export default class Player {
     private Table;
     private hand;
     constructor(seat: number, Table: Table, hand?: Nullable<IHand>);
-    setHand(hand: IHand): this;
+    setHand(hand: IHand): Card | this;
     getHand(): string | null;
     inHand(): boolean;
     getCards(): Nullable<Card[]>;
