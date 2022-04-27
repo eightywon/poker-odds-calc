@@ -9,6 +9,7 @@ class Player {
             this.setHand(hand);
     }
     setHand(hand) {
+        console.log("setHand, arg hand: ", hand, "this.hand: ", this.hand);
         const game = this.Table.getGame();
         /*spn
         if ((game.isTexasHoldem() || game.isSixPlusTexasHoldem()) && hand.length>=1)

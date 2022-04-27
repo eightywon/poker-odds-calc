@@ -50,6 +50,7 @@ class Table {
         return this;
     }
     setPlayerHand(hand, seat) {
+        console.log("setPlayerHand ", hand, seat);
         if (this.players.length < seat)
             throw new Error("Seat not available!");
         if (seat < 1 || seat > this.seats)
@@ -60,6 +61,8 @@ class Table {
           throw new Error(`Seat ${seat} taken!`);
         spn
         */
+        if (this.players[seat - 1].getHand.length == 2) //spn
+            throw new Error(`Seat ${seat} taken!`);
         this.players[seat - 1].setHand(hand);
         return this;
     }
