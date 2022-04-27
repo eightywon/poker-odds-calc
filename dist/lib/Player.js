@@ -26,7 +26,9 @@ class Player {
             });
         }
         else if (this.hand.length == 1) {
+            console.log("getting card for ", hand[0]);
             const card = this.Table.getDeck().getCards().find(card => card.toString() === hand[0]);
+            console.log("card is  ", card);
             if (!card)
                 throw new Error(`Card "${hand}" not found!`);
             return card.setOwner(this);
