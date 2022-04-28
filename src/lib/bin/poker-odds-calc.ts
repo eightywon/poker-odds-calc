@@ -116,7 +116,7 @@ try {
 
   PrintResult(table.calculate());
 
-} catch (e) {
+} catch (e: any) {
   log(e.toString(), 'red')
 }
 

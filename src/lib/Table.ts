@@ -65,7 +65,6 @@ export default class Table {
   }
 
   setPlayerHand(hand: IHand, seat: number) {
-    console.log("setPlayerHand ",hand,seat)
     if (this.players.length < seat)
       throw new Error("Seat not available!");
     if (seat < 1 || seat > this.seats)

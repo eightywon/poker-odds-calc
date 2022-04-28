@@ -12,7 +12,6 @@ export default class Player {
   }
 
   setHand(hand: IHand) {
-    console.log("setHand, arg hand: ",hand,"this.hand: ",this.hand)
     const game = this.Table.getGame();
     /*spn
     if ((game.isTexasHoldem() || game.isSixPlusTexasHoldem()) && hand.length>=1)
@@ -29,9 +28,7 @@ export default class Player {
         return card.setOwner(this);
       });
     } else if (this.hand.length==1) {
-      console.log("getting card for ",hand[0])
       const card = this.Table.getDeck().getCards().find(card => card.toString() === hand[0]) as Card;
-      console.log("card is  ",card)
       if (!card)
         throw new Error(`Card "${hand}" not found!`);
       this.hand[1]=card
